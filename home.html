@@ -3,98 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Postify - Home</title>
     <link rel="stylesheet" href="home-style.css">
 </head>
 <body>
 
-    <div class="container pt-3">
-        <nav class="navbar navbar-expand-lg bg-white rounded shadow-sm px-4 custom-navbar">
-            <div class="container-fluid">
-                <span class="navbar-brand fw-bold text-dark fs-4 brand-logo" href="">Postify</span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active fw-semibold nav-home-link" href="home.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-secondary" href="profile.html">Profile</a>
-                        </li>
-                    </ul>
-                    
-                    <div class="d-flex gap-2">
-                        <button type="button" class="btn btn-outline-success auth-btn login-btn">Login</button>
-                        <button type="button" class="btn btn-outline-success auth-btn register-btn">Register</button>
-                    </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a class="brand-logo" href="home.html">Postify</a>
+            
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a class="nav-link active" href="home.html">Home</a></li>
+                    <li><a class="nav-link" href="profile.html">Profile</a></li>
+                </ul>
+                
+                <div class="auth-buttons">
+                    <button type="button" class="btn login-btn">Login</button>
+                    <button type="button" class="btn register-btn">Register</button>
                 </div>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
 
-    <div class="container my-5 custom-feed-container">
-        <div class="d-flex flex-column gap-4">
+    <main class="feed-container">
+        <div id="posts-container">
             
-            <div class="card border-0 rounded-3 post-card">
-                <div class="card-header bg-white border-bottom-0 d-flex align-items-center gap-2 pt-3 user-header">
-                    <img src="https://placehold.co/40" class="rounded-circle border user-avatar" alt="user avatar">
-                    <span class="fw-bold text-dark username-text">samer56</span>
+            <article class="post-card">
+                <header class="post-header">
+                    <img src="https://placehold.co/40" class="user-avatar" alt="user avatar">
+                    <span class="username-text">samer56</span>
+                </header>
+                
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" class="post-img" alt="post image">
                 </div>
-                <div class="px-3 image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" class="card-img-top rounded post-img" alt="post image">
-                </div>
-                <div class="card-body">
-                    <h6 class="text-secondary small post-time">2 days ago</h6>
-                    <p class="card-text text-dark post-desc">Doloribus id voluptas veritatis ratione temporibus mollitia. Illo et porro eligendi iure.</p>
-                    <hr class="text-muted custom-hr">
-                    <div class="d-flex align-items-center justify-content-between post-footer">
-                        <div class="comments-count text-dark small fw-semibold d-flex align-items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                
+                <div class="post-body">
+                    <h6 class="post-time">2 days ago</h6>
+                    <p class="post-desc">Doloribus id voluptas veritatis ratione temporibus mollitia. Illo et porro eligendi iure.</p>
+                    <hr class="custom-hr">
+                    
+                    <footer class="post-footer">
+                        <div class="comments-count">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.707l-1.587-1.587z"/>
                             </svg>
                             <span>(3) Comments</span>
                         </div>
-                        <div class="tags-container d-flex gap-1">
-                            <span class="badge bg-secondary rounded-pill tag-badge">policy</span>
-                            <span class="badge bg-secondary rounded-pill tag-badge">economy</span>
-                            <span class="badge bg-secondary rounded-pill tag-badge">entertainment</span>
+                        <div class="tags-container">
+                            <span class="tag-badge">policy</span>
+                            <span class="tag-badge">economy</span>
+                            <span class="tag-badge">entertainment</span>
                         </div>
-                    </div>
+                    </footer>
                 </div>
-            </div>
+            </article>
 
-            <div class="card border-0 rounded-3 post-card">
-                <div class="card-header bg-white border-bottom-0 d-flex align-items-center gap-2 pt-3 user-header">
-                    <img src="https://placehold.co/40" class="rounded-circle border user-avatar" alt="user avatar">
-                    <span class="fw-bold text-dark username-text">nimry.samer</span>
+            <article class="post-card">
+                <header class="post-header">
+                    <img src="https://placehold.co/40" class="user-avatar" alt="user avatar">
+                    <span class="username-text">nimry.samer</span>
+                </header>
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc" class="post-img" alt="post image">
                 </div>
-                <div class="px-3 image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc" class="card-img-top rounded post-img" alt="post image">
-                </div>
-                <div class="card-body">
-                    <h6 class="text-secondary small post-time">3 days ago</h6>
-                    <p class="card-text text-dark post-desc">Aperiam distinctio iure delectus veritatis architecto rem omnis.</p>
-                    <hr class="text-muted custom-hr">
-                    <div class="d-flex align-items-center justify-content-between post-footer">
-                        <div class="comments-count text-dark small fw-semibold d-flex align-items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                <div class="post-body">
+                    <h6 class="post-time">3 days ago</h6>
+                    <p class="post-desc">Aperiam distinctio iure delectus veritatis architecto rem omnis.</p>
+                    <hr class="custom-hr">
+                    <footer class="post-footer">
+                        <div class="comments-count">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.707l-1.587-1.587z"/>
                             </svg>
                             <span>(5) Comments</span>
                         </div>
-                        <div class="tags-container d-flex gap-1">
-                            <span class="badge bg-secondary rounded-pill tag-badge">nature</span>
+                        <div class="tags-container">
+                            <span class="tag-badge">nature</span>
                         </div>
-                    </div>
+                    </footer>
                 </div>
-            </div>
+            </article>
 
         </div>
-    </div>
+    </main>
+
     <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="home.js"></script>
 
 </body>
 </html>
