@@ -1,0 +1,89 @@
+/* General Page Styling */
+body {
+    background-color: #f0ecff; /* البنفسجي الهادي من الاسكرين شوت */
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Navbar Adjustments */
+.custom-navbar {
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.brand-logo {
+    letter-spacing: -0.5px;
+}
+
+.nav-home-link {
+    color: #000 !important;
+}
+
+/* Buttons Styling */
+.auth-btn {
+    font-weight: 500;
+    padding: 0.375rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.login-btn, .register-btn {
+    color: #198754;
+    border-color: #198754;
+}
+
+.login-btn:hover, .register-btn:hover {
+    background-color: #198754;
+    color: #fff;
+}
+
+/* Post Cards Layout */
+.custom-feed-container {
+    max-width: 800px;
+}
+
+.post-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.user-header {
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.username-text {
+    font-size: 1.05rem;
+}
+
+.post-img {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.post-time {
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.post-desc {
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.custom-hr {
+    opacity: 0.15;
+    margin: 1rem 0;
+}
+
+/* Tags Styling */
+.tag-badge {
+    background-color: #6c757d !important;
+    padding: 0.5rem 0.75rem;
+    font-weight: 500;
+    font-size: 0.85rem;
+}

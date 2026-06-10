@@ -1,0 +1,109 @@
+/* General Page Styling */
+body {
+    background-color: #f0ecff;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Navbar Adjustments */
+.custom-navbar {
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.brand-logo {
+    letter-spacing: -0.5px;
+}
+
+.nav-profile-link {
+    color: #000 !important;
+}
+
+.nav-avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+
+.logout-btn {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.75rem;
+}
+
+/* Profile Layout Container */
+.custom-profile-container {
+    max-width: 800px;
+}
+
+/* Main Profile Metadata Card */
+.info-card {
+    background-color: #ffffff;
+    border: none !important;
+}
+
+.main-profile-avatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.user-email-title {
+    font-size: 1.4rem;
+}
+
+.username-subtitle {
+    font-weight: 400;
+}
+
+/* Stats Numbers Styling */
+.stat-count {
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+.stat-text {
+    color: #8c8c8c;
+    font-size: 0.9rem;
+}
+
+/* Section Header */
+.section-title {
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+}
+
+/* Post Cards inside Profile */
+.post-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.user-header {
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.post-img {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.post-title-text {
+    font-size: 1.25rem;
+}
+
+.post-desc {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.custom-hr {
+    opacity: 0.15;
+    margin: 1rem 0;
+}
