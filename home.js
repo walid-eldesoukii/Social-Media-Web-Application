@@ -6,7 +6,7 @@ const getPosts = async () => {
             "https://tarmeezacademy.com/api/v1/posts",
             {
             params: {
-                limit: 50,
+                limit: 10,
             },
             }
         );
