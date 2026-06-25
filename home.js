@@ -5,9 +5,9 @@ const getPosts = async () => {
         const response = await axios.get(
             "https://tarmeezacademy.com/api/v1/posts",
             {
-            params: {
-                limit: 10,
-            },
+            // params: {
+            //     limit: 10,
+            // },
             }
         );
 
@@ -65,3 +65,21 @@ const getPosts = async () => {
     }
 };
 getPosts()
+const token = localStorage.getItem("token")
+if(token){
+    document.getElementById("authButtons").style.display = "none"
+    document.getElementById("alertContainer").innerHTML = `
+        <div class="welcome-box" id="welcomeAlert">
+                Login Successful! Welcome back, chief 🚀
+        </div>
+    `
+    const welcomeAlert = document.getElementById("welcomeAlert");
+
+    setTimeout(function() {
+        welcomeAlert.style.opacity = "0"; 
+    }, 3000);
+
+    setTimeout(function() {
+        document.getElementById("alertContainer").innerHTML = ""; 
+    }, 3800);
+}

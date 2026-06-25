@@ -92,6 +92,7 @@ body {
 .logout-btn {
     color: #dc3545; 
     border: 1px solid #dc3545;
+    text-decoration: none;
 }
 
 .logout-btn:hover {
