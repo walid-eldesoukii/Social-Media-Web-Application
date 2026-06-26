@@ -13,7 +13,25 @@ document.getElementById("loginForm").addEventListener("submit",async function(ev
         const token = response.data.token
         localStorage.setItem("token",token)
         window.location.href = "index.html"
-    } catch (error) {
-        alert("Data entered are wrong");
+    }catch (error) {
+        const errorContainer = document.getElementById("errorContainer");
+        
+        let errorMessage = "Registration failed! Please try again.";
+        if (error.response && error.response.data && error.response.data.message) {
+            errorMessage = error.response.data.message;
+        }
+        
+        errorContainer.innerHTML = `
+            <div class="error-box" id="errorAlert">
+                ⚠️ ${errorMessage}
+            </div>
+        `;
+        
+        setTimeout(function() {
+            const errorAlert = document.getElementById("errorAlert");
+            if (errorAlert) {
+                errorContainer.innerHTML = ""; 
+            }
+        }, 4000);
     }
 })
