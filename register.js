@@ -1,28 +1,37 @@
 document.getElementById("registerForm").addEventListener("submit",async function(event){
     event.preventDefault()
+    
     const registerUsername = document.getElementById("registerUsername").value
     const registerPassword = document.getElementById("registerPassword").value
     const registerEmail = document.getElementById("registerEmail").value
     const registerName = document.getElementById("registerName").value
+    const registerPhoto = document.getElementById("registerPhoto").files[0]
+
+    const formData = new FormData()
+    formData.append("username",registerUsername)
+    formData.append("password",registerPassword)
+    formData.append("email",registerEmail)
+    formData.append("name",registerName)
+    if(registerPhoto){
+        formData.append("image",registerPhoto)
+    }
+
     try {
         const response = await axios.post(
             "https://tarmeezacademy.com/api/v1/register",
-            {
-                "username" : registerUsername,
-                "password" : registerPassword,
-                "email" : registerEmail,
-                "name" : registerName
-            }
+            formData
         );
         const token = response.data.token
         const username = response.data.user.username
         const email = response.data.user.email
         const name = response.data.user.name
+        const profilePhoto = response.data.user.profile_image
 
         localStorage.setItem("token",token)
         localStorage.setItem("username",username)
         localStorage.setItem("email",email)
         localStorage.setItem("name",name)
+        localStorage.setItem("profilePhoto",profilePhoto)
 
         window.location.href = "index.html";
     }catch (error) {
