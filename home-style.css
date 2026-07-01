@@ -217,3 +217,123 @@ body {
     opacity: 1;
     transition: opacity 0.8s ease-out;
 }
+
+.input-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #0b0c10;
+    border: 1px dashed rgba(102, 252, 241, 0.4);
+    border-radius: 5px;
+    color: #c5c6c7;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.input-group input[type="file"]:hover {
+    border-color: #66fcf1;
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
+}
+.input-group{
+    padding: 10px;
+}
+
+.create-post-container {
+    background-color: #1f2833;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.05);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid rgba(102, 252, 241, 0.1);
+}
+
+.create-post-container h2 {
+    color: #66fcf1;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #0b0c10;
+    border: 1px solid rgba(69, 243, 255, 0.3);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.input-group textarea:focus {
+    border-color: #66fcf1;
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.4);
+}
+.input-group input[type="file"] {
+    display: none;
+}
+
+.file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #0b0c10;
+    border: 2px dashed #45f3ff55;
+    border-radius: 8px;
+    color: #c5c6c7;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    gap: 10px;
+}
+
+.file-upload-label:hover {
+    border-color: #66fcf1;
+    background-color: rgba(102, 252, 241, 0.03);
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.2);
+    color: #fff;
+}
+
+.file-upload-label i {
+    font-size: 24px;
+    color: #66fcf1;
+}
+
+#publishPostBtn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, transparent, transparent);
+    border: 2px solid #66fcf1;
+    color: #66fcf1;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+#publishPostBtn:hover {
+    background: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 0 20px #66fcf1, 0 0 40px rgba(102, 252, 241, 0.5);
+    text-shadow: none;
+}
+
+#publishPostBtn:active {
+    transform: scale(0.98);
+}

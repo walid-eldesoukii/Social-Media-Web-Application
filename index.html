@@ -28,6 +28,29 @@
 
     <div id="alertContainer"></div>
 
+    <div class="create-post-container" id="createPostCard">
+    <h2>Share Something, Chief! 🚀</h2>
+    
+    <form id="createPostForm">
+        <div class="input-group">
+            <label>Upload Post Image</label>
+            <label for="postImageInput" class="file-upload-label">
+                <span>📸 Choose a snapshot...</span>
+            </label>
+            <input type="file" id="postImageInput" accept="image/*" required>
+        </div>
+
+        <div class="input-group">
+            <label for="postBodyInput">What's on your mind?</label>
+            <textarea id="postBodyInput" required placeholder="Write your thoughts here..." rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="auth-btn" id="publishPostBtn">Publish Post</button>
+    </form>
+    
+    <div id="postErrorContainer"></div>
+    </div>
+
     <main class="feed-container">
         <div id="posts-container">
 <!--             
