@@ -1,18 +1,25 @@
 let postsContainer = document.getElementById("posts-container")
+
+let currentPage = 1
+let lastPage = 1
+let isLoading = false
+
 const getPosts = async () => {
     try {
-
+        isLoading = true
         const response = await axios.get(
             "https://tarmeezacademy.com/api/v1/posts",
             {
-            // params: {
-            //     limit: 10,
-            // },
+            params: {
+                limit: 5,
+                page: currentPage
+            }
             }
         );
 
         let posts = response.data.data
-        postsContainer.innerHTML = ""
+        lastPage = response.data.meta.last_page;
+        console.log(response.data)
 
         for(post of posts){
 
@@ -41,7 +48,7 @@ const getPosts = async () => {
                     ${postImage}
                 <div class="post-body">
                     <h6 class="post-time">${post.created_at}</h6>
-                    <p class="post-desc">${post.title}</p>
+                    <p class="post-desc">${post.body}</p>
                     <hr class="custom-hr">
                     
                     <footer class="post-footer">
@@ -59,18 +66,27 @@ const getPosts = async () => {
             </article>
             `
         }
+        isLoading = false
 
     }catch (error) {
         console.error(error);
+        isLoading = false
     }
 };
 getPosts()
+window.addEventListener("scroll", function() {
+    const endOfPage = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 100;
+    if (endOfPage && currentPage < lastPage && !isLoading) {
+        currentPage++;
+        getPosts();
+    }
+});
 const token = localStorage.getItem("token")
 if(token){
     document.getElementById("authButtons").style.display = "none"
     document.getElementById("alertContainer").innerHTML = `
         <div class="welcome-box" id="welcomeAlert">
-                Login Successful! Welcome back, chief 🚀
+                Account is logged in".
         </div>
     `
     const welcomeAlert = document.getElementById("welcomeAlert");
@@ -83,3 +99,37 @@ if(token){
         document.getElementById("alertContainer").innerHTML = ""; 
     }, 3800);
 }
+
+document.getElementById("publishPostBtn").addEventListener("click",function(event){
+    event.preventDefault();
+
+    const postBody = document.getElementById("postBodyInput").value
+    const postImage = document.getElementById("postImageInput").files[0]
+
+    const formData = new FormData()
+
+    formData.append("body",postBody)
+    if(postImage){
+        formData.append("image",postImage)
+    }
+
+    const createPost = async () => {
+        try {
+            const response = await axios.post("https://tarmeezacademy.com/api/v1/posts", formData, {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+                
+            });
+            document.getElementById("successAlert").style.display ="block"
+                setTimeout(function() {
+                    window.location.reload()
+                }, 3800);
+        } catch (error) {
+            document.getElementById("successAlert").style.display ="block"
+            document.getElementById("successAlert").style.backgroundColor ="red"
+            document.getElementById("successAlert").innerHTML = error.message
+        }
+    }
+    createPost();
+})
