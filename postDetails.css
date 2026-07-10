@@ -1,0 +1,242 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1f2833;
+    padding: 15px 20px;
+    border-bottom: 1px solid #2f3e46;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-title {
+    color: #66fcf1;
+    font-size: 16pt;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #45f3ff;
+    font-weight: 500;
+    font-size: 11pt;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    color: #66fcf1;
+    text-shadow: 0 0 8px rgba(102, 252, 241, 0.6);
+}
+
+/* Main Container */
+.main-container-details {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Post Card Style */
+.post-card {
+    background-color: #1f2833;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #2f3e46;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 2px solid #45f3ff;
+    object-fit: cover;
+}
+
+.username-text {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 12pt;
+}
+
+.image-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #2f3e46;
+}
+
+.post-img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.post-body {
+    padding-top: 5px;
+}
+
+.post-time {
+    color: #45f3ff;
+    font-size: 9.5pt;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.post-desc {
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #c5c6c7;
+    margin-bottom: 20px;
+}
+
+.custom-hr {
+    border: 0;
+    height: 1px;
+    background: #2f3e46;
+    margin: 20px 0;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comments-count {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #66fcf1;
+    font-size: 10.5pt;
+}
+
+.tags-container {
+    display: flex;
+    gap: 6px;
+}
+
+.tag-badge {
+    background-color: #0b0c10;
+    color: #45f3ff;
+    border: 1px solid #45f3ff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 9.5pt;
+}
+
+/* Comments Section */
+.comments-section {
+    background-color: #1f2833;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #2f3e46;
+}
+
+.comments-section h3 {
+    color: #66fcf1;
+    margin-bottom: 20px;
+    font-size: 14pt;
+    border-bottom: 1px solid #2f3e46;
+    padding-bottom: 12px;
+}
+
+.comment-card {
+    background-color: #0b0c10;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #2f3e46;
+}
+
+.comment-username {
+    font-weight: bold;
+    font-size: 11pt;
+    color: #45f3ff;
+    margin-bottom: 6px;
+}
+
+.comment-text {
+    font-size: 11pt;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+/* Add Comment Box */
+.add-comment-box {
+    display: flex;
+    margin-top: 25px;
+    gap: 12px;
+}
+
+#comment-input {
+    flex: 1;
+    padding: 14px 16px;
+    background-color: #0b0c10;
+    border: 1px solid #45f3ff;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 11pt;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+#comment-input:focus {
+    border-color: #66fcf1;
+    box-shadow: 0 0 8px rgba(102, 252, 241, 0.4);
+}
+
+#submit-comment-btn {
+    padding: 0 25px;
+    background-color: #0b0c10;
+    color: #66fcf1;
+    border: 1px solid #66fcf1;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 11pt;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#submit-comment-btn:hover {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 0 12px rgba(102, 252, 241, 0.5);
+}
+
+.loading-text {
+    text-align: center;
+    color: #45f3ff;
+    font-style: italic;
+    opacity: 0.8;
+}

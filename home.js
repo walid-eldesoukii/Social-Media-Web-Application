@@ -40,7 +40,7 @@ const getPosts = async () => {
             }
 
             postsContainer.innerHTML += `
-            <article class="post-card">
+            <article class="post-card" onclick="postDetails(${post.id})">
                 <header class="post-header">
                     <img src="${userAvatar}" onerror="this.src='Images/download.png'" alt="user avatar" class="user-avatar">
                     <span class="username-text">${post.author.username}</span>
@@ -133,3 +133,7 @@ document.getElementById("publishPostBtn").addEventListener("click",function(even
     }
     createPost();
 })
+
+function postDetails(id){
+    window.location = `postDetails.html?id=${id}`
+}
