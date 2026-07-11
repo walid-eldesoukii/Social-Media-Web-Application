@@ -121,14 +121,14 @@ document.getElementById("publishPostBtn").addEventListener("click",function(even
                 }
                 
             });
-            document.getElementById("successAlert").style.display ="block"
+            document.getElementById("Alert").style.display ="block"
                 setTimeout(function() {
                     window.location.reload()
                 }, 3800);
         } catch (error) {
-            document.getElementById("successAlert").style.display ="block"
-            document.getElementById("successAlert").style.backgroundColor ="red"
-            document.getElementById("successAlert").innerHTML = error.message
+            document.getElementById("Alert").style.display ="block"
+            document.getElementById("Alert").style.backgroundColor ="red"
+            document.getElementById("Alert").innerHTML = error.message
         }
     }
     createPost();
