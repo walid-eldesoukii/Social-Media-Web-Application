@@ -283,3 +283,137 @@ body {
 .comments-count svg {
     fill: #66fcf1;
 }
+.action-btn {
+    background: transparent;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.edit-btn {
+    border: 1px solid #66fcf1;
+    color: #66fcf1;
+}
+
+.edit-btn:hover {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 0 12px #66fcf1;
+    transform: translateY(-1px);
+}
+
+
+.delete-btn {
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #dc3545;
+    color: #ffffff;
+    box-shadow: 0 0 12px #dc3545;
+    transform: translateY(-1px);
+}
+/* 1. الخلفية المظلمة الشفافة التي تغطي الشاشة بالكامل */
+.custom-modal {
+    display: none; /* مخفي تلقائياً لحد ما نطلبه بالـ JS */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 12, 16, 0.85); /* نفس درجة الـ body المظلمة */
+    backdrop-filter: blur(5px); /* تأثير ضبابي خفيف للخلفية */
+    z-index: 1000; /* عشان يظهر فوق كل عناصر الصفحة */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. صندوق التنبيه المضيء نفسه */
+.modal-content {
+    background-color: #1f2833; /* نفس لون الكروت في موقعك */
+    border: 2px solid #66fcf1; /* إطار نيون مضيء */
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.4); /* توهج الإطار */
+    border-radius: 8px;
+    padding: 25px;
+    width: 90%;
+    max-width: 420px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.modal-content h3 {
+    color: #66fcf1;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+#modalMessage {
+    color: #c5c6c7;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* 3. حاوية الأزرار وتنسيق زر الـ Cancel والـ Confirm */
+.modal-actions-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal-btn {
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.modal-btn.confirm {
+    background-color: #66fcf1;
+    border: 1px solid #66fcf1;
+    color: #0b0c10;
+}
+
+.modal-btn.confirm:hover {
+    box-shadow: 0 0 12px #66fcf1;
+    transform: translateY(-1px);
+}
+
+.modal-btn.cancel {
+    background-color: transparent;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}
+
+.modal-btn.cancel:hover {
+    background-color: #dc3545;
+    color: #ffffff;
+    box-shadow: 0 0 12px #dc3545;
+    transform: translateY(-1px);
+}
+/* تنسيق خانة الكتابة داخل التنبيه */
+#modalTextarea {
+    width: 100%;
+    height: 120px;
+    background-color: #0b0c10; /* نفس لون الـ body المظلم */
+    border: 1px solid #45f3ff; /* إطار نيون لبني */
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 10px;
+    resize: none; /* عشان اليوزر ميعرفش يبوظ مقاس الصندوق بالماوس */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+#modalTextarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px #66fcf1; /* توهج نيون عند الكتابة */
+}

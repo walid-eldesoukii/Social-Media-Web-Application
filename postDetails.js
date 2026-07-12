@@ -15,12 +15,12 @@ const postDetails = async () => {
         `
         <article class="post-card">
             <header class="post-header">
-                <img src="${post.author.profile_image}" alt="user avatar" class="user-avatar">
+                <img src="${post.author.profile_image}" onerror="this.src='Images/download.png';" alt="user avatar" class="user-avatar">
                 <span class="username-text">${post.author.username}</span>
             </header>
             
             <div class="image-wrapper">
-                <img src="${post.image}" class="post-img" alt="post image">
+                <img src="${post.image}" onerror="this.closest('.image-wrapper').remove();" class="post-img" alt="post image">
             </div>
             
             <div class="post-body">

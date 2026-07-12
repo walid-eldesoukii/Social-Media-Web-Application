@@ -11,7 +11,9 @@ document.getElementById("loginForm").addEventListener("submit",async function(ev
             }
         );
         const token = response.data.token
+        const userId = response.data.user.id
         localStorage.setItem("token",token)
+        localStorage.setItem("userId", userId)
         window.location.href = "index.html"
     }catch (error) {
         const errorContainer = document.getElementById("errorContainer");

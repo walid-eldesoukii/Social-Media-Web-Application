@@ -26,12 +26,14 @@ document.getElementById("registerForm").addEventListener("submit",async function
         const email = response.data.user.email
         const name = response.data.user.name
         const profilePhoto = response.data.user.profile_image
+        const userId = response.data.user.id
 
         localStorage.setItem("token",token)
         localStorage.setItem("username",username)
         localStorage.setItem("email",email)
         localStorage.setItem("name",name)
         localStorage.setItem("profilePhoto",profilePhoto)
+        localStorage.setItem("userId", userId)
 
         window.location.href = "index.html";
     }catch (error) {
