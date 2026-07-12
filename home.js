@@ -41,10 +41,10 @@ const getPosts = async () => {
 
             postsContainer.innerHTML += `
             <article class="post-card" >
-                <header class="post-header">
+                <a href="userProfile.html?id=${post.author.id}" style="text-decoration: none;"><header class="post-header">
                     <img src="${userAvatar}" onerror="this.src='Images/download.png'" alt="user avatar" class="user-avatar">
                     <span class="username-text">${post.author.username}</span>
-                </header>
+                </header></a>
                     ${postImage}
                 <div class="post-body">
                     <h6 class="post-time">${post.created_at}</h6>

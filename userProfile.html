@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postify - User Profile</title>
+    <link rel="stylesheet" href="userProfile.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a class="brand-logo">Postify</a>
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                </ul>
+                <div class="user-nav-profile">
+                    <img src="Images/download.png" class="nav-avatar" id="navAvatar" alt="user avatar">
+                    <span class="nav-username" id="navUsername">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="profile-container">
+        <section class="info-card">
+            <div class="info-card-layout">
+                <div class="info-meta-section">
+                    <img src="Images/download.png" class="main-profile-avatar" id="userProfileAvatar" alt="Profile Avatar">
+                    <div class="user-info-text">
+                        <h4 class="user-email-title" id="userProfileName">Name</h4>
+                        <h6 class="username-subtitle" id="userProfileUsername">@username</h6>
+                        <p class="full-name-desc" id="userProfileEmail">Email</p>
+                    </div>
+                </div>
+                
+                <div class="stats-numbers-wrapper">
+                    <div class="stat-box">
+                        <span class="stat-count" id="userPostsCount">0</span>
+                        <span class="stat-text">Posts</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-count" id="userCommentsCount">0</span>
+                        <span class="stat-text">Comments</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="section-title"><span id="titleUsername">User</span>'s Posts</h2>
+
+        <div id="user-posts-container">
+        </div>
+    </main>
+
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="userProfile.js"></script>
+</body>
+</html>
